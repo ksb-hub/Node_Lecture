@@ -1,14 +1,15 @@
-const express = require('express');
-const app = express();
+const http = require('http');
 
-app.listen(8080, function (){
-    console.log("listening on 8080");
+const server = http.createServer((req, res)=>{
+    res.write('<h1>Hello Node!</h1>');
+    res.write('<h1>Hello server</h1>');
+    res.write('<p>Hello SeokBeom</p>');
+}).listen();
+
+server.on('listening', ()=>{
+    console.log("8080번 포트에서 서버 대기 중...");
 });
 
-app.get('/pet', function (요청, 응답){
-    응답.send("펫 용품 쇼핑할 수 있는 페이지입니다.");
-})
-
-app.get('/', function (요청, 응답){
-    응답.sendFile(__dirname + '/index.html')
-})
+server.on('error', ()=>{
+    console.log("8080번 포트 서버 실행 중 에러 발생");
+});
