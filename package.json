@@ -1,7 +1,7 @@
 {
   "name": "nodeprac",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,14 @@
   "description": "",
   "dependencies": {
     "express": "^4.18.2",
-    "mysql": "^2.18.1"
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.6.3",
+    "nunjucks": "^3.2.4",
+    "sequelize": "^6.35.1",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
